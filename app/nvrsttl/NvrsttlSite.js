@@ -86,6 +86,8 @@ export function Header() {
             <li><Link href="/nvrsttl/shop">Shop</Link></li>
             <li><Link href="/nvrsttl/shop?cat=headwear">Headwear</Link></li>
             <li><Link href="/nvrsttl/shop?cat=sale">Sale</Link></li>
+            <li><Link href="/nvrsttl/tryon">Try on</Link></li>
+            <li><Link href="/nvrsttl/3d">In 3D</Link></li>
             <li><Link href="/nvrsttl#about">About</Link></li>
             <li><Link href="/nvrsttl#vlog">Vlog</Link></li>
             <li><Link href="/nvrsttl#help">Help</Link></li>
