@@ -9,7 +9,8 @@ const fs = require('fs'), path = require('path');
   await p.addScriptTag({ path: path.join(dir, 'node_modules/three/build/three.min.js') });
   await p.addScriptTag({ path: path.join(dir, 'scene.js') });
   const logo = 'data:image/png;base64,' + fs.readFileSync(path.join(dir, 'logo.png')).toString('base64');
-  await p.evaluate(src => new Promise((res, rej) => { const im = new Image(); im.onload = () => { window.buildScene(im); res(); }; im.onerror = rej; im.src = src; }), logo);
+  const cloth = 'data:image/png;base64,' + fs.readFileSync(path.join(dir, 'cloth.png')).toString('base64');
+  await p.evaluate(([a, b]) => new Promise((res, rej) => { const i1 = new Image(), i2 = new Image(); let n = 0; const go = () => { if (++n === 2) { window.buildScene(i1, i2); res(); } }; i1.onload = go; i2.onload = go; i1.onerror = i2.onerror = rej; i1.src = a; i2.src = b; }), [logo, cloth]);
   fs.mkdirSync(path.join(dir, 'frames'), { recursive: true });
   for (let i = 0; i < N; i++) {
     const url = await p.evaluate(t => window.renderFrame(t), i / N);
