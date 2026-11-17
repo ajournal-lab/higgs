@@ -2,8 +2,7 @@
 # Render each garment's 120-frame turn, put it on white, and encode it into the repo.
 G=/tmp/claude-0/-home-user-higgs/e2b73ada-89b3-55e7-9c6a-740ec51cd777/scratchpad/garments
 R=/home/user/higgs/public/nvrsttl/models
-for g in boss-front-tee olive-tee black-polo navy-zip-polo boss-back-tee; do
-  rm -rf $G/$g/frames
+for g in "$@"; do
   TEE_DIR=$G/$g /home/user/blender-env/bin/python $G/build_tee.py -- 120 > $G/$g/render.log 2>&1
   n=$(ls $G/$g/frames 2>/dev/null | wc -l)
   if [ "$n" != "120" ]; then echo "FAILED $g ($n frames)"; continue; fi

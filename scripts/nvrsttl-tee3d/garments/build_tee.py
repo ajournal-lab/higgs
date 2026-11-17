@@ -227,5 +227,7 @@ else:
     os.makedirs(os.path.join(T, 'frames'), exist_ok=True)
     for i in range(N_):
         pivot.rotation_euler = (0, 0, math.radians(-35 + 360 * i / N_))
-        sc.render.filepath = os.path.join(T, 'frames', f'f_{i:03d}.png'); bpy.ops.render.render(write_still=True)
+        out = os.path.join(T, 'frames', f'f_{i:03d}.png')
+        if os.path.exists(out): continue   # resume an interrupted render
+        sc.render.filepath = out; bpy.ops.render.render(write_still=True)
 print('verts', len(me.vertices), 'faces', len(me.polygons))
