@@ -1,0 +1,11 @@
+[
+ {"id": "olive-tee", "rgb": [86, 72, 36], "tile": "olive_tile_raw.png", "tile_m": 0.36},
+ {"id": "black-polo", "rgb": [12, 14, 15], "placket": "buttons", "collar": {"rgb": [12, 14, 15]},
+  "prints": [{"side": "front", "image": "puma_logo_raw.png", "thresh": 70, "cx": 0.12, "cz": 0.535, "width": 0.075, "palette": [[232, 232, 230]]}]},
+ {"id": "boss-back-tee", "rgb": [12, 12, 13],
+  "prints": [{"side": "back", "image": "boss_back_raw.png", "thresh": 38, "cx": 0.0, "cz": 0.40, "width": 0.40, "palette": [[230, 226, 214], [118, 118, 116], [78, 78, 78]]}]},
+ {"id": "boss-front-tee", "rgb": [12, 12, 13],
+  "prints": [{"side": "front", "image": "boss_front_raw.png", "thresh": 75, "cx": 0.0, "cz": 0.535, "width": 0.30, "palette": [[236, 234, 228]]}]},
+ {"id": "navy-zip-polo", "rgb": [18, 40, 50], "raglan": [226, 220, 208], "placket": "zip", "collar": {"rgb": [228, 222, 210]},
+  "prints": [{"side": "front", "image": "zara_print_raw.png", "thresh": 80, "cx": 0.0, "cz": 0.355, "width": 0.34, "palette": [[234, 230, 220]]}]}
+]

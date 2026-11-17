@@ -6,8 +6,14 @@ import { ASSET } from './NvrsttlSite';
 /* The tees stand on a ring that circles the viewer. When a tee reaches the front, the ring stops,
    that tee plays its 360° turntable clip once, and the ring moves on to the next tee.
    Add a tee by rendering its turntable (scripts/nvrsttl-tee3d) and adding a line here. */
+const tee = (id, name) => ({ id, name, video: `models/${id}-turntable.mp4`, poster: `models/${id}-poster.jpg` });
 export const TEES = [
-  { id: 'lv-tee', name: 'Black tee', video: 'models/lv-tee-turntable.mp4', poster: 'models/lv-tee-poster.jpg' },
+  tee('lv-tee', 'Black print tee'),
+  tee('olive-tee', 'Olive jacquard tee'),
+  tee('black-polo', 'Black polo'),
+  tee('boss-back-tee', 'Black back-print tee'),
+  tee('boss-front-tee', 'Black logo tee'),
+  tee('navy-zip-polo', 'Navy zip polo'),
 ];
 
 const MIN_SLOTS = 5; // with fewer tees than this, the list repeats so the ring stays full
