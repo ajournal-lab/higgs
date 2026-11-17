@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { ASSET, CREW, CartDrawer, Footer, Header, useCart } from './NvrsttlSite';
+import TeeCarousel from './TeeCarousel';
 
 function Hero() {
   const [sound, setSound] = useState(false);
@@ -89,6 +90,7 @@ export default function NvrsttlHome() {
     <>
       <Header />
       <main>
+        <TeeCarousel />
         <Hero />
 
         <section className="sec wrap" id="after-hours" aria-labelledby="ah-h">

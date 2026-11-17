@@ -413,3 +413,14 @@ body:not(.is-in) .in-only { display: none; }
   .faq-a { padding: 0 0 22px 52px; }
 }
 
+
+/* tee ring: the collection circling on the front page */
+.tee-ring-sec { background: #ffffff; color: #111111; overflow: hidden; padding-top: clamp(40px, 6vw, 80px); padding-bottom: clamp(32px, 5vw, 64px); text-align: center; }
+.tee-ring-copy { position: relative; z-index: 2; }
+.tee-stage { --ring-r: clamp(220px, 34vw, 460px); --card: clamp(180px, 26vw, 340px); position: relative; height: calc(var(--card) * 1.25); perspective: 1600px; perspective-origin: 50% 35%; margin-top: clamp(12px, 2vw, 24px); }
+.tee-ring { position: absolute; left: 50%; top: 0; width: 0; height: 100%; transform-style: preserve-3d; transition-property: transform; transition-timing-function: cubic-bezier(.65, 0, .35, 1); }
+.tee-card { position: absolute; left: calc(var(--card) / -2); top: 0; width: var(--card); height: var(--card); transition-property: opacity; }
+.tee-card img, .tee-card video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); }
+.tee-card .hide { visibility: hidden; }
+.tee-ring-name { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); }
+@media (prefers-reduced-motion: reduce) { .tee-ring { transition: none; } }
